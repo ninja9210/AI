@@ -11,7 +11,7 @@ def branch_bound(nums, limit):
 			if current_sum <= limit:
 				if current_sum > max_sum:
 					max_sum = current_sum
-					best_chosen_numbers = chosen_numbers  # Update the best chosen numbers
+					best_chosen_numbers = chosen_numbers  
 			continue
 		
 		if current_sum + nums[index] <= limit:
@@ -19,7 +19,7 @@ def branch_bound(nums, limit):
 		
 		queue.append((index + 1, current_sum, chosen_numbers))
 	
-	# Print the best chosen numbers
+
 	print(f"Best chosen numbers: {best_chosen_numbers}")
 	return max_sum
 
