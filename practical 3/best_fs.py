@@ -26,7 +26,7 @@ def greedy_best_first_search(start, goal, heuristic, graph):
 
 	return None
 
-# Example usage
+
 graph = {
 	'A': [('B', 2), ('C', 1)],
 	'B': [('A', 2), ('D', 3)],
