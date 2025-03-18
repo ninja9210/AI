@@ -2,7 +2,7 @@ from queue import PriorityQueue
 
 def greedy_best_first_search(start, goal, heuristic, graph):
 	open_list = PriorityQueue()
-	open_list.put((heuristic[start], start)) # Add the starting node with its heuristic value
+	open_list.put((heuristic[start], start)) 
 	visited = set()
 	came_from = {} # Tracks the path
 
@@ -10,12 +10,12 @@ def greedy_best_first_search(start, goal, heuristic, graph):
 		cost, current = open_list.get()
 
 		if current == goal:
-			# Reconstruct the path from start to goal
+		
 			path = []
 			while current is not None:
 				path.append(current)
 				current = came_from.get(current, None)
-			return path[::-1] # Reverse the path to get the correct order
+			return path[::-1] 
 
 		visited.add(current)
 
@@ -24,7 +24,7 @@ def greedy_best_first_search(start, goal, heuristic, graph):
 				came_from[neighbor] = current
 				open_list.put((heuristic[neighbor], neighbor))
 
-	return None # Return None if no path is found
+	return None
 
 # Example usage
 graph = {
